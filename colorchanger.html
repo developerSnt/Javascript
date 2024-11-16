@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title> Javascript color changer</title>
+    </head>
+    <body>
+         <h1>Change the background color</h1>
+         <div class="button" id="pink">pink</div><br><br><hr><br>
+         <div class="button" id="yellow">yellow</div>
+
+    </body>
+    <script>
+     const  color  = document.querySelectorAll(".button")
+     const  body = document.querySelector('body')
+     color.forEach(function(button){
+        console.log(button)
+  button.addEventListener('click', function (e){
+      console.log(e)
+    if(e.target.id == 'pink'){
+        body.style.backgroundColor = e.target.id
+    }
+   
+    if(e.target.id == 'yellow'){
+        body.style.backgroundColor = e.target.id
+    }
+  })
+     })
+
+    </script>
+</html>

@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title> calculate </title>
+    </head>
+    <body>
+        <h1>BMI calculate</h1>
+        <form> 
+            <label>Enter Height</label> : 
+            <input type="text" id="height">
+            <br><br>
+            <label> Enter weight : </label>
+            <input type="text" id="weight">
+            <button>calculate</button>
+            <br><br><hr><br><br>
+            <label id="result"></label>
+            <br><br><hr>
+        </form>
+    </body>
+    <script>
+        const form = document.querySelector('form')
+        form.addEventListener('submit',function(e){
+            e.preventDefault();
+            const height = parseInt(document.querySelector('#height').value);
+            const width = parseInt(document.querySelector('#weight').value)
+            const result = document.querySelector('#result')
+            if(height === ''||height < 0 ||isNaN(height)){
+                 result.innerHTML = `plese Enter valid height ${height}`
+            }
+            else if(width === ''|| width < 0 || isNaN(width)){
+                 result.innerHTML = `plese Enter valid width  ${width}`
+            }
+            else {
+                const bmi = (width / ((height * height) / 10000)).toFixed(2)
+                result.innerHTML = `BMI : ${bmi}`
+            }
+        })
+    </script>
+</html>

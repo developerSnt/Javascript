@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <title>Dom manuplte</title>
+    </head>
+    <body>
+          <ul class="language">
+       <li>Javascript</li>
+
+          </ul>
+
+    </body>
+    <script>
+         function Addlanguage(langname){
+              const li =  document.createElement('li');
+              li.innerHTML = `${langname}`
+              document.querySelector('.language').appendChild(li)
+         }
+
+         
+         Addlanguage("HTML")
+         function addoptlang(languagename){
+            const li = document.createElement('li')
+            li.appendChild(document.createTextNode(languagename))
+            document.querySelector('.language').appendChild(li)
+           
+         }
+         addoptlang("reactjs")
+         const firtlang = document.querySelector('li:first-child')
+         firtlang.outerHTML = "<li> Typescript <li>"
+
+            const lastlang = document.querySelector('li:last-child');
+            lastlang.remove()
+    </script>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backgraound color change in js</title>
+</head>
+<body>
+   <h1 style="color: aliceblue;"> Automatically change the color </h1> 
+   <button id="start">start</button>
+   <button id="stop">stop</button>
+</body>
+<script>
+ const randomacolor = function(){
+    const hex = "0123456789ABCDEF";
+    let color = "#";
+   for (let i = 0; i < 6; i++){
+         color += hex[Math.floor(Math.random() * 16)]
+   }
+   console.log(color);
+   
+   return color;
+ };
+   let intervelid
+  const startcolorchanger = function(){
+    if(intervelid == null){
+        intervelid = setInterval(colorchangbg,1000);
+    }
+  
+   function colorchangbg(){
+        document.body.style.backgroundColor = randomacolor()
+    }  
+  }
+  const stoptcolorchanger = function(){
+    clearInterval(intervelid)
+    intervelid = null
+  }
+ document.querySelector("#start").addEventListener('click',startcolorchanger)
+document.querySelector("#stop").addEventListener('click',stoptcolorchanger)
+</script>
+</html>
